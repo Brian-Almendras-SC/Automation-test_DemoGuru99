@@ -1,7 +1,9 @@
 class Search
     include Complements
-    def searchAndFillForName valueToSearch
+    def searchAndFill valueToSearch
         fill_in('q',:with => valueToSearch).native.send_keys(:return)
-        #fill_in(nameToSearch,:with => valueToSearch).native.send_keys(:return)
+    end
+    def searchAndFillForName(nameId,valueToSearch)
+        fill_in(nameId,:with => valueToSearch).native.send_keys(:return)
     end
 end
