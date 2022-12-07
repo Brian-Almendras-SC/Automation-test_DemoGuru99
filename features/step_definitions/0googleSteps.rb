@@ -1,12 +1,12 @@
 4#Given I am on the Google homepage
 Given(/^I am on the Google homepage$/) do
-  page.driver.browser.manage.window.maximize
   visit ('/')
 end
 
 #When I search for "houston dynamo tickets"
 When(/^I search for "([^"]*)"$/) do |valueToSearch|
-  fill_in('q',:with => valueToSearch).native.send_keys(:return)
+  @page.searchPage.searchAndFillForName valueToSearch
+#fill_in('q',:with => valueToSearch).native.send_keys(:return)
 end
 
 #Then I will click the "Tickets | Houston Dynamo" link
