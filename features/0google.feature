@@ -6,7 +6,7 @@ Feature: As a internet user
 Scenario: Search for the Houston Dynamo Website        
   Given I am on the Google homepage
   When I search for "Houston Dynamo Tickets"
-  Then I will click the "Tickets - Houston Dynamo FC" link
+  Then I will click the "Tickets - Dynamo FC" link
 
 @runThis
 Scenario: Searching for a UCB Site

@@ -1,11 +1,11 @@
 #Given I am on the sample homepage
 Given(/^I am on the sample homepage$/) do
-  visit 'http://demo.guru99.com/'
+  @page.registerGuru99.setAnotherDir()
 end
 
 #When I enter blank details for Register
 When(/^I enter blank details for Register$/) do
-	fill_in 'emailid', :with => ""
+	@page.registerGuru99.fillinEmail("")
 end
 
 #And Press the "Submit" button
@@ -21,24 +21,19 @@ end
 
 #When I enter "carlos@test.com" for Register
 When(/^I enter "([^"]*)" for Register$/) do |userName|
-  fill_in 'emailid', :with => userName
+@page.registerGuru99.fillinEmail(userName)
 end
 
 #Then I should see the following table:
 Then(/^I should see the following table:$/) do |table|
-  loginMessage = 'Access details to demo site'
-  find(:xpath, '/html/body/table/tbody/tr[1]/td/h2', :text => loginMessage)
-  data = table.rows_hash
-  counter = 4
-  #path= find("table")
-  path = find(:xpath, '/html/body/table')
-  
-  xpath_base_name = './tbody/tr[%i]/td[1]'
-  xpath_base_name1 = './tbody/tr[%i]/td[2]'
-  data.each_pair do |key, value|
-     expect(path.find(:xpath, xpath_base_name % [counter])).to have_content(key)
-     counter += 1 
+  @res=@page.registerGuru99.verificyInToThePage()
+  puts @res
+  if (@res)
+    puts("Into the details")
+  else
+    fail("Not into the deatils")
   end
+  @page.registerGuru99.findTable(table)
 end
 
 

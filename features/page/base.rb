@@ -5,7 +5,7 @@ class Base
     def findPage
         FindCucumber.new
     end
-    def expectPage
-        ExpectPage.new
+    def registerGuru99
+        RegisterGuru99.new
     end
 end

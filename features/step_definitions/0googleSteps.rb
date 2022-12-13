@@ -1,6 +1,6 @@
 4#Given I am on the Google homepage
 Given(/^I am on the Google homepage$/) do
-  visit ('/')
+  @page.findPage.setAnotherDir()
 end
 
 #When I search for "houston dynamo tickets"
