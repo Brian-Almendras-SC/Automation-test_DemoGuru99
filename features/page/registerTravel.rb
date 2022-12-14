@@ -79,4 +79,25 @@ class RegisterTravel
         puts find(:xpath,'/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[3]/font/b').text
         
     end
+
+    def fillWithEnvData
+        fill_in 'userName', :with => ENV['USER']
+        fill_in 'password', :with => ENV['PSW']
+    end
+
+    def verificyLoginSucessfully(page)
+        (page).has_content?("Login Successfully")
+        puts find(:css, 'body > div:nth-child(5) > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(4) > td > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > p:nth-child(1) > font > b').text
+        puts find(:xpath,'/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[1]/font/b').text
+    end
+
+    def clickInTheButton()
+        xpath = '/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[2]/td[3]/form/table/tbody/tr[4]/td/table/tbody/tr[4]/td[2]/div/input'
+        find(:xpath, xpath).click
+    end
+
+    def clickInSubmitButton
+        xpath = '/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[4]/td/input'
+        find(:xpath, xpath).click
+    end
 end
