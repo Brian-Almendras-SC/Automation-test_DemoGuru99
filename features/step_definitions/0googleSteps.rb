@@ -29,8 +29,8 @@ end
 
 #And I see text about working hours "Atención de lunes a viernes de 08:30 a 15:30"
 Then('I see text about working hours {string}') do |workingHoursUCB|
-  sleep(10)
-  workingHoursLabel = @page.findPage.findByXpath('/html/body/div[1]/div[2]/div[2]/div[1]/div/div[3]/div/ul/li[1]/div/p')
+  sleep(15)
+  workingHoursLabel = @page.findPage.findByXpath('//*[@id="wrapper"]/div[2]/div[1]/div/div[3]/div/ul/li[1]/div/p')
   if workingHoursLabel.text != workingHoursUCB
     	raise "Working hours should be"+workingHoursUCB	
   end
