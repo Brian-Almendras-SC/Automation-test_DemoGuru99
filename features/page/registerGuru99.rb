@@ -36,4 +36,12 @@ class RegisterGuru99
             @counter += 1 
         end
     end
+
+    def findUsernameID(arg1)
+        #En este text el arg1 en el feature de 1guru99.feature la tabla email y "username"=mngr111111 estos numeros pueden variar
+        #Por que la pagina genera numeros random y estos solo duran 20 Dias
+        @text='mngr'+arg1.to_s
+        #@purchasedLabel = find(:xpath, '/html/body/table/tbody/tr[4]/td[2]', :text => /\Amngr\d\d\d\d\d\d\z/)
+        return find(:xpath, '/html/body/table/tbody/tr[4]/td[2]', :text =>@text)
+    end
 end

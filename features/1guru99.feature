@@ -28,7 +28,7 @@ Scenario Outline: Register on Guru99 page with a several emails
   
 Examples:
     | email               | username    | 
-    |  carlos@test.com    |  mngr135053 |
-    |  pepe@hotmail.com   |  mngr123467 |	  
-    |  lucas@gmail.com    |  mngr187654 |
+    |  carlos@test.com    |  mngr457954 |
+    |  pepe@hotmail.com   |  mngr457956 |	  
+    |  lucas@gmail.com    |  mngr457957 |
 

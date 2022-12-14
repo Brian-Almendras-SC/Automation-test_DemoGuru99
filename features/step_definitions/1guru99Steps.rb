@@ -38,6 +38,7 @@ end
 
 
 Then(/^I should see mngr(\d+) id$/) do |arg1|
-  purchasedLabel = find(:xpath, '/html/body/table/tbody/tr[4]/td[2]', :text => /\Amngr\d\d\d\d\d\d\z/)
+  purchasedLabel=@page.registerGuru99.findUsernameID(arg1)
+  #purchasedLabel = find(:xpath, '/html/body/table/tbody/tr[4]/td[2]', :text => /\Amngr\d\d\d\d\d\d\z/)
 end
     

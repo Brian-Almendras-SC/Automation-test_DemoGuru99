@@ -8,4 +8,7 @@ class Base
     def registerGuru99
         RegisterGuru99.new
     end
+    def registerTravel
+        RegisterTravel.new
+    end
 end
